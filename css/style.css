@@ -3,6 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  display: flex;
+}
 .slider {
   position: relative;
   max-width: 800px;
@@ -13,6 +21,7 @@
 }
 .slides {
   display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
@@ -31,13 +40,22 @@
   display: block;
 }
 
+.slide h1 {
+  color: white;
+  text-align: center;
+}
+
 .prev,
 .next {
+  width: 32px;
+  border-radius: 50%;
+  border: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
+  background: yellow;
 }
 
 .prev {
