@@ -36,8 +36,45 @@ document.addEventListener("DOMContentLoaded", function () {
       dot.classList.remove("active");
     });
     dots[currentSlideIndex].classList.add("active");
-    setTimeout(showSlides, 2000); // Change image every 3 seconds
   }
+
+  // Start auto slide
+  function startAutoSlide() {
+    autoslideInterval = setInterval(function () {
+      updateSlider(currentSlideIndex + 1);
+    }, 3000);
+  }
+
+  // Stop auto slide
+  function stopAutoSlide() {
+    clearInterval(autoslideInterval);
+  }
+
+  startAutoSlide();
+
+  // Arrow Button Click Time Performance
+
+  preveButton.addEventListener("click", function () {
+    stopAutoSlide();
+    updateSlider(currentSlideIndex);
+    startAutoSlide();
+  });
+
+  nextButton.addEventListener("click", function () {
+    stopAutoSlide();
+    updateSlider(currentSlideIndex);
+    startAutoSlide();
+  });
+
+  // Dot Button Click Time Performance
+  dots.forEach(function (dot) {
+    dot.addEventListener("click", function () {
+      stopAutoSlide();
+      let index = parseInt(dot.getAttribute("data-slide"));
+      updateSlider(index);
+      startAutoSlide();
+    });
+  });
 
   preveButton.addEventListener("click", function () {
     updateSlider(currentSlideIndex - 1);
