@@ -9,7 +9,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  display: flex;
+  flex-direction: column;
 }
 .slider {
   position: relative;
@@ -99,4 +99,8 @@ body {
 
 .active {
   background-color: yellow;
+}
+
+.signature{
+  align-items: center;
 }
