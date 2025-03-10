@@ -52,8 +52,4 @@ document.addEventListener("DOMContentLoaded", function () {
       updateSlider(index);
     });
   });
-  function showSlides() {
-    updateSlider(currentSlideIndex + 1);
-  }
-  setTimeout(showSlides, 2000);
 });
